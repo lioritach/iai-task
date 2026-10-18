@@ -1,0 +1,43 @@
+<!-- רקע אפור מאחורי החלון -->
+<div class="overlay" (click)="onCancel()"></div>
+
+<div class="modal">
+  <h2>{{ ad ? 'Edit Ad' : 'New Ad' }}</h2>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <form (ngSubmit)="onSubmit()">
+
+    <label>Title *</label>
+    <input type="text" [(ngModel)]="title" name="title" placeholder="Short title" />
+
+    <label>Description *</label>
+    <textarea [(ngModel)]="description" name="description" rows="4" placeholder="Describe your ad"></textarea>
+
+    <label>Category *</label>
+    <select [(ngModel)]="category" name="category">
+      <option value="">-- Select --</option>
+      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    </select>
+
+    <label>Contact</label>
+    <input type="text" [(ngModel)]="contact" name="contact" placeholder="Phone or email" />
+    <label>Location (optional)</label>
+    <div class="location-row">
+      <button type="button" class="btn-location" (click)="getMyLocation()" [disabled]="gettingLocation">
+        {{ gettingLocation ? 'Getting location...' : '📍 Use my location' }}
+      </button>
+      <span *ngIf="locationLat !== null" class="location-ok">✓ Got it</span>
+    </div>
+    <input *ngIf="locationLat !== null" type="text" [(ngModel)]="locationAddress" name="locationAddress"
+      placeholder="Location name (e.g. Tel Aviv, Dizengoff)" />
+    <div *ngIf="locationError" class="location-error">{{ locationError }}</div>
+    <div class="form-actions">
+      <button type="button" class="btn-cancel" (click)="onCancel()">Cancel</button>
+      <button type="submit" class="btn-save" [disabled]="saving">
+        {{ saving ? 'Saving...' : 'Save' }}
+      </button>
+    </div>
+
+  </form>
+</div>

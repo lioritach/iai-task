@@ -1,0 +1,73 @@
+<div class="board-page">
+
+  <div class="board-header">
+    <div class="header-title">
+      <h1 class="title-main">{{msg.board.title}}</h1>
+      <span class="title-sub">{{msg.board.subtitle}}</span>
+    </div>
+    <button class="btn-add" (click)="openNewForm()">{{msg.board.newAd}}</button>
+  </div>
+
+  <div class="filters">
+    <input
+      type="text"
+      placeholder="{{msg.board.searchAdPlaceholder}}"
+      [(ngModel)]="searchText"
+      (keyup.enter)="onSearch()"
+      class="search-input"
+    />
+    <button class="btn-search" (click)="onSearch()">{{msg.board.search}}</button>
+
+    <select [(ngModel)]="selectedCategory" (change)="onCategoryChange()" class="category-select">
+      <option value="">{{msg.board.all_cat}}</option>
+      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    </select>
+    <button
+      class="btn-nearme"
+      [class.active]="nearMe"
+      (click)="toggleNearMe()"
+    >
+      📍 {{ nearMe ? 'Near me: ON' : 'Near me' }}
+    </button>
+    <span *ngIf="locationError" class="location-error-inline">{{ locationError }}</span>
+  </div>
+
+  <div *ngIf="loading" class="status-message">{{msg.board.loading}}</div>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  <div *ngIf="!loading && !errorMessage && ads.length === 0" class="status-message">
+    No ads found.
+  </div>
+
+  <div class="cards-grid" *ngIf="!loading && ads.length > 0">
+    <div class="card" *ngFor="let ad of ads">
+
+      <div class="card-header">
+        <span class="category-badge">{{ ad.category }}</span>
+        <span *ngIf="isMine(ad)" class="mine-badge">My Ad</span>
+      </div>
+
+      <h2 class="card-title">{{ ad.title }}</h2>
+      <p class="card-description">{{ ad.description }}</p>
+
+      <div class="card-footer">
+        <span class="card-contact">{{ ad.contact }}</span>
+        <span *ngIf="ad.location" class="card-location">{{ ad.location.address }}</span>
+      </div>
+
+      <div class="card-actions" *ngIf="isMine(ad)">
+        <button class="btn-edit" (click)="openEditForm(ad)">{{msg.board.edit}}</button>
+        <button class="btn-delete" (click)="deleteAd(ad)">{{msg.board.delete}}</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<app-ad-form
+  *ngIf="showForm"
+  [ad]="editingAd"
+  (closed)="onFormClosed($event)"
+/>
+<p-confirmDialog />

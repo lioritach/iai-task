@@ -1,0 +1,245 @@
+.board-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  font-family: sans-serif;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  background-image: url('../images/street1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 10vh;
+  padding: 0 24px;
+  border-radius: 10px;
+  position: relative;
+    &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 10px;
+  }
+
+  // כל התוכן יהיה מעל השכבה הכהה
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+
+}
+
+.header-title {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.title-main {
+  font-family: 'Georgia', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  white-space: nowrap;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.title-sub {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  font-style: italic;
+  font-weight: 400;
+  border-left: 2px solid rgba(255, 255, 255, 0.4);
+  padding-left: 16px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.category-select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.btn-search {
+  padding: 8px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover { background: #2563eb; }
+}
+
+.btn-add {
+  padding: 8px 16px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+width: 5vw;
+  &:hover { background: #059669; }
+}
+
+.status-message {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.error-message {
+  text-align: center;
+  padding: 20px;
+  color: #dc2626;
+  background: #fef2f2;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.category-badge {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.mine-badge {
+  background: #f0fdf4;
+  color: #166534;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #111;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+  flex: 1;
+
+  // חיתוך טקסט ארוך אחרי 3 שורות
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn-edit {
+  flex: 1;
+  padding: 6px;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover { background: #fde68a; }
+}
+
+.btn-delete {
+  flex: 1;
+  padding: 6px;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover { background: #fee2e2; }
+}
+
+
+.btn-nearme {
+  padding: 8px 16px;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #86efac;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover { background: #dcfce7; }
+
+  &.active {
+    background: #16a34a;
+    color: white;
+    border-color: #16a34a;
+  }
+}
+
+.location-error-inline {
+  color: #dc2626;
+  font-size: 0.85rem;
+  align-self: center;
+}

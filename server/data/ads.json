@@ -1,0 +1,62 @@
+[
+  {
+    "id": "3bc20b7d-7d08-4077-aa3d-e46adc5fabd4",
+    "title": "Bike for sale",
+    "description": "Great condition, barely used",
+    "category": "Buy & Sell",
+    "contact": "052-1234567",
+    "location": null,
+    "createdAt": "2026-10-18T07:19:58.874Z",
+    "updatedAt": "2026-10-18T07:19:58.874Z"
+  },
+  {
+    "id": "28aa6d0b-9d85-44c6-a96f-b517549665dc",
+    "title": "Bike for sale",
+    "description": "Great condition, barely used",
+    "category": "Rent",
+    "contact": "052-1234567",
+    "location": null,
+    "createdAt": "2026-10-18T07:21:00.843Z",
+    "updatedAt": "2026-10-18T07:21:00.843Z"
+  },
+  {
+    "id": "aac1f360-59f6-482d-95f6-3089b3f3d70c",
+    "title": "Launch",
+    "description": "Great condition, barely used",
+    "category": "Rent",
+    "contact": "052-1234567",
+    "location": null,
+    "createdAt": "2026-10-18T07:21:24.957Z",
+    "updatedAt": "2026-10-18T07:21:24.957Z"
+  },
+  {
+    "id": "68ca6c65-e1ed-4839-9413-2c13831a953f",
+    "title": "sdsd",
+    "description": "sdsdsd",
+    "category": "Other",
+    "contact": "052222",
+    "location": null,
+    "createdAt": "2026-10-18T13:14:23.222Z",
+    "updatedAt": "2026-10-18T13:14:23.222Z"
+  },
+  {
+    "id": "07639ddb-f708-4a56-9584-ee8c9f479fc3",
+    "title": "TEST3",
+    "description": "dsfsdf",
+    "category": "Buy & Sell",
+    "contact": "ffff",
+    "location": null,
+    "createdAt": "2026-10-18T13:20:17.067Z",
+    "updatedAt": "2026-10-18T13:44:47.156Z"
+  },
+  {
+    "id": "eb8e7c2e-8aea-4f1e-aef9-09b71e41ef91",
+    "title": "sdsdsd",
+    "description": "sdsdsd",
+    "category": "Buy & Sell",
+    "contact": "sd",
+    "location": null,
+    "createdAt": "2026-10-18T14:59:15.540Z",
+    "updatedAt": "2026-10-18T14:59:15.540Z"
+  }
+]

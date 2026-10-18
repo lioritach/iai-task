@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'primeicons/primeicons.css';
+
+
+.p-dialog {
+    max-height: 90%;
+    transform: scale(1);
+    border-radius: var(--p-dialog-border-radius);
+    box-shadow: var(--p-dialog-shadow);
+    background: var(--p-dialog-background);
+    border: 1px solid var(--p-dialog-border-color);
+    color: var(--p-dialog-color);
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    direction: rtl;
+}
+
+.p-dialog-footer {
+    flex-shrink: 0;
+    padding: var(--p-dialog-footer-padding);
+    display: flex;
+    justify-content: space-between !important;
+    gap: var(--p-dialog-footer-gap);
+    direction: ltr;
+    
+}
+
+.p-dialog-content {
+    overflow-y: auto;
+    padding: var(--p-dialog-content-padding);
+    flex-grow: 1;
+    height: 10vh;
+    width: 20vw;
+}
+
+
+.p-confirmdialog-message {
+    font-size: 1.2rem;
+}
