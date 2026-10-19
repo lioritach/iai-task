@@ -3,10 +3,10 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Ad, AdInput } from '../models/ad.model';
 
-// כתובת השרת שבנינו
+
 const API_URL = 'http://localhost:3000/api';
 
-// השירות הזה מדבר עם ה-REST API. כל פונקציה מתאימה לנתיב אחד בשרת.
+
 @Injectable({ providedIn: 'root' })
 export class AdsService {
   constructor(private http: HttpClient) { }
