@@ -3,7 +3,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// הנתיב לקובץ הנתונים
 const DATA_FILE = path.join(__dirname, '..', 'data', 'ads.json');
 
 // read all the ads from file ads.json
