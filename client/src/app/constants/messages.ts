@@ -9,5 +9,14 @@ export const MESSAGES = {
         loading: 'Loading...',
         edit: 'Edit',
         delete: 'Delete'
+    },
+    adform: {
+        title: 'Title',
+        description: 'Description',
+        category: 'Category',
+        select: 'Select',
+        contact: 'Contact',
+        location: 'Location',
+        
     }
 }

@@ -40,23 +40,13 @@
     "updatedAt": "2026-10-18T13:14:23.222Z"
   },
   {
-    "id": "07639ddb-f708-4a56-9584-ee8c9f479fc3",
-    "title": "TEST3",
-    "description": "dsfsdf",
+    "id": "d10b718a-84ae-4a17-a21d-47878d8463fc",
+    "title": "Bike",
+    "description": "Bike for sell",
     "category": "Buy & Sell",
-    "contact": "ffff",
+    "contact": "0524499896",
     "location": null,
-    "createdAt": "2026-10-18T13:20:17.067Z",
-    "updatedAt": "2026-10-18T13:44:47.156Z"
-  },
-  {
-    "id": "eb8e7c2e-8aea-4f1e-aef9-09b71e41ef91",
-    "title": "sdsdsd",
-    "description": "sdsdsd",
-    "category": "Buy & Sell",
-    "contact": "sd",
-    "location": null,
-    "createdAt": "2026-10-18T14:59:15.540Z",
-    "updatedAt": "2026-10-18T14:59:15.540Z"
+    "createdAt": "2026-10-19T08:27:03.152Z",
+    "updatedAt": "2026-10-19T08:27:03.152Z"
   }
 ]

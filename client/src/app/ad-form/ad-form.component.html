@@ -8,21 +8,21 @@
 
   <form (ngSubmit)="onSubmit()">
 
-    <label>Title *</label>
+    <label>{{ msg.adform.title }} *</label>
     <input type="text" [(ngModel)]="title" name="title" placeholder="Short title" />
 
-    <label>Description *</label>
+    <label>{{ msg.adform.description }} *</label>
     <textarea [(ngModel)]="description" name="description" rows="4" placeholder="Describe your ad"></textarea>
 
-    <label>Category *</label>
+    <label>{{ msg.adform.category }} *</label>
     <select [(ngModel)]="category" name="category">
-      <option value="">-- Select --</option>
+      <option value="">-- {{ msg.adform.select }} --</option>
       <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
     </select>
 
-    <label>Contact</label>
+    <label>{{ msg.adform.contact }}</label>
     <input type="text" [(ngModel)]="contact" name="contact" placeholder="Phone or email" />
-    <label>Location (optional)</label>
+    <label>{{ msg.adform.location }} (optional)</label>
     <div class="location-row">
       <button type="button" class="btn-location" (click)="getMyLocation()" [disabled]="gettingLocation">
         {{ gettingLocation ? 'Getting location...' : '📍 Use my location' }}

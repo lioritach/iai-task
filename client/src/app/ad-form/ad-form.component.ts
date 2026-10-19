@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AdsService } from '../services/ads.service';
 import { MyAdsService } from '../services/my-ads.service';
 import { Ad, AdInput } from '../models/ad.model';
+import { MESSAGES } from '../constants/messages';
 
 @Component({
   selector: 'app-ad-form',
@@ -39,8 +40,10 @@ export class AdFormComponent implements OnInit {
     private myAdsService: MyAdsService
   ) { }
 
+  readonly msg = MESSAGES;
+
   ngOnInit() {
-    // אם עריכה — ממלאים את הטופס בערכים הקיימים
+    // if there is and ad, its for update
     if (this.ad) {
       this.title = this.ad.title;
       this.description = this.ad.description;
@@ -85,8 +88,7 @@ export class AdFormComponent implements OnInit {
 
   onSubmit() {
     this.errorMessage = '';
-
-    // ולידציה פשוטה בצד לקוח
+ 
     if (this.title.trim().length < 2) {
       this.errorMessage = 'Title must be at least 2 characters';
       return;
@@ -113,11 +115,11 @@ export class AdFormComponent implements OnInit {
     this.saving = true;
 
     if (this.ad) {
-      // עריכה — PUT
+      // Edit
       this.adsService.updateAd(this.ad.id, adInput).subscribe({
         next: () => {
           this.saving = false;
-          this.closed.emit(true); // הודע להורה שהייתה שמירה
+          this.closed.emit(true); 
         },
         error: (err) => {
           this.saving = false;
@@ -125,10 +127,10 @@ export class AdFormComponent implements OnInit {
         }
       });
     } else {
-      // יצירה — POST
+      // Create
       this.adsService.createAd(adInput).subscribe({
         next: (newAd) => {
-          this.myAdsService.add(newAd.id); // שמור ב-localStorage שזו מודעה שלי
+          this.myAdsService.add(newAd.id); // Save in localstorage
           this.saving = false;
           this.closed.emit(true);
         },
