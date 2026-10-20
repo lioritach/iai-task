@@ -30,7 +30,7 @@ export class BoardComponent implements OnInit {
   loading = false;
   errorMessage = '';
 
-  // מצב הטופס
+
   showForm = false;
   editingAd: Ad | null = null; // null = יצירה, ad = עריכה
 
@@ -78,24 +78,21 @@ export class BoardComponent implements OnInit {
     return this.myAdsService.isMine(ad.id);
   }
 
-  // פתיחת טופס יצירה
   openNewForm() {
     this.editingAd = null;
     this.showForm = true;
   }
 
-  // פתיחת טופס עריכה
   openEditForm(ad: Ad) {
     this.editingAd = ad;
     this.showForm = true;
   }
 
-  // סגירת הטופס — saved=true אם הייתה שמירה
   onFormClosed(saved: boolean) {
     this.showForm = false;
     this.editingAd = null;
     if (saved) {
-      this.loadAds(); // טוענים מחדש כדי לראות את השינויים
+      this.loadAds(); 
     }
   }
 
@@ -128,7 +125,7 @@ export class BoardComponent implements OnInit {
     );
   }
 
-  // מחיקת מודעה
+
   deleteAd(ad: Ad) {
     this.confirmationService.confirm({
       message: 'האם אתה בטוח שברצונך למחוק את המודעה?',
