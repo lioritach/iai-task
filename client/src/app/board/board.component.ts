@@ -125,7 +125,7 @@ export class BoardComponent implements OnInit {
     );
   }
 
-
+  
   deleteAd(ad: Ad) {
     this.confirmationService.confirm({
       message: 'האם אתה בטוח שברצונך למחוק את המודעה?',
